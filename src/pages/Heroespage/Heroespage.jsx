@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { getApiResource } from "../../utils/network";
 import { HEROES_DATA } from "../../constants/api";
+import Heroeslist from "../../components/Heroeslist/Heroeslist";
 
 export default function Heroespage() {
   const [heroes, setHeroes] = useState(null);
@@ -15,15 +16,11 @@ export default function Heroespage() {
     getResource(HEROES_DATA);
   }, []);
 
-    return(
+    return (
+        
     <div>
-        <ul>
-                {heroes && heroes.results.map((person, index) =>
-                    <li key={person.id}>
-                        <img src={person.image} />
-                        {person.name}
-        </li>)}
-        </ul>
-        </div>
+            {heroes && <Heroeslist data={heroes} />}
+    </div>
+        
     )
 }
