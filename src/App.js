@@ -1,9 +1,16 @@
 import './App.css';
+import Heroespage from './pages/Heroespage/Heroespage';
+import { getApiResource } from './utils/network' 
 
 function App() {
+
+
+  getApiResource();
+
   return (
 
-<h1>Привет</h1>
+   <Heroespage />
+  
 
   );
 }
