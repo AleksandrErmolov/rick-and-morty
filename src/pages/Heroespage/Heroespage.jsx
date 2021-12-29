@@ -10,7 +10,6 @@ const Heroespage = ({ setErrorApi }) => {
   const getResource = async (url) => {
     const res = await getApiResource(url);
     console.log(res);
-    
 
     if (res) {
       setHeroes(res);
@@ -24,7 +23,12 @@ const Heroespage = ({ setErrorApi }) => {
     getResource(HEROES_DATA);
   }, []);
 
-  return <div>{heroes && <Heroeslist data={heroes} />}</div>;
+  return (
+    <div>
+      <h1 className="header__text">Navigation</h1>
+      {heroes && <Heroeslist data={heroes} />}
+    </div>
+  );
 };
 
 export default withErrorApi(Heroespage);

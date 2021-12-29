@@ -6,16 +6,53 @@
     --color-dark-gray: #10100e;
     --color-yelllow: #ffff00;
 
+    --color-blue: #6a83fb;
+    --color-violent: #ae72c2;
+
     --border-radius-small: 3px;
     --spacing-medium: 20px;
+    --spacing-large: 30px;
+
+    --font-size: 16px;
+    --width-max: 1200px;
+
+    --font-bold: 600;
+    --transition: .4s;
     --font-family-main: sans-serif;
     --font-size-header: 26px;
+
+    --text-shadow-yellow:
+        0 0 2px var(--color-white),
+        0 0 40px var(--color-blue);
+
+    --theme-default-header: #cccc46;
+    --theme-default-bgimage: url('./static/bg.gif')
 }
 
 
 body {
-    background-color: var(--dark);
+
     margin: 0;
     padding: 0;
-    font-family: var(--font-family-main)
+    background-color: #10100e;
+    font-family: var(--font-family-main);
+    font-size: var(--font-size);
+    background-image: var(--theme-default-bgimage);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: top left;
+    background-attachment: fixed;
+
+}
+
+img {
+    display: block;
+}
+
+.header__text {
+    line-height: 1.7;
+    font-size: var(--font-size-header);
+    text-shadow: 0 0 2px var(--color-black);
+    color: var(--theme-default-header);
+    transition: color var(--transition);
 }
