@@ -8,10 +8,13 @@ export default function Header() {
     <div className={styles.conteiner}>
       <ul className={styles.list__container}>
         <li>
-          <NavLink to="/"> Home </NavLink>{" "}
+          <NavLink to="/"> Home </NavLink>
         </li>
         <li>
-          <NavLink to="/heroes"> Heroes </NavLink>{" "}
+          <NavLink to="/heroes"> Heroes </NavLink>
+        </li>
+        <li>
+          <NavLink to="/not-found"> Not Found </NavLink>
         </li>
       </ul>
     </div>

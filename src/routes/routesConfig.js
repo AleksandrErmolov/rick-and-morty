@@ -1,4 +1,5 @@
 import HomePage from "../components/HomePage/HomePage";
+import NotFound from "../components/NotFound/NotFound";
 import Heroespage from "../pages/Heroespage/Heroespage";
 
 const routesConfig = [
@@ -12,6 +13,18 @@ const routesConfig = [
     path: "/heroes",
     component: <Heroespage />,
     exatc: true,
+  },
+
+  {
+    path: "/not-found",
+    component: <NotFound />,
+    exatc: true,
+  },
+
+  {
+    path: "*",
+    component: <NotFound />,
+    exatc: false,
   },
 ];
 
