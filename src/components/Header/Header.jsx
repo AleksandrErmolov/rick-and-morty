@@ -11,7 +11,7 @@ export default function Header() {
           <NavLink to="/"> Home </NavLink>
         </li>
         <li>
-          <NavLink to="/heroes"> Heroes </NavLink>
+          <NavLink to="/heroes/?page=1"> Heroes </NavLink>
         </li>
         <li>
           <NavLink to="/not-found"> Not Found </NavLink>

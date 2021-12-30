@@ -1,6 +1,6 @@
 export const getApiResource = async (url) => {
   try {
-    const res = await fetch("https://rickandmortyapi.com/api/character");
+    const res = await fetch(url);
 
     if (!res.ok) {
       console.log("Could not fetch.", res.status);

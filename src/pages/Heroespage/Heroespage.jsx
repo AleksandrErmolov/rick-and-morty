@@ -1,18 +1,34 @@
 import React, { useState, useEffect } from "react";
 import { getApiResource } from "../../utils/network";
-import { HEROES_DATA } from "../../constants/api";
+import { HEROES_DATA, SWAPI_PARAM_PAGE } from "../../constants/api";
 import Heroeslist from "../../components/Heroeslist/Heroeslist";
 import { withErrorApi } from "../../hoc-helpers/withErrorApi";
+import HeroesNavigation from "../../components/HeroesNavigation/HeroesNavigation";
+import { useQueryParams } from "../../hooks/useQueryParams";
+import { getPeoplePageId } from "../../services/getPeopleData";
 
 const Heroespage = ({ setErrorApi }) => {
   const [heroes, setHeroes] = useState(null);
+  const [nextPage, setNextPage] = useState(null);
+  const [prevPage, setPrevPage] = useState(null);
+  const [counterPage, setCounterPage] = useState(2);
+
+  console.log("counterPage", counterPage);
+
+  const query = useQueryParams();
+  const queryPage = query.get("page");
+  console.log("queryPage", queryPage);
 
   const getResource = async (url) => {
     const res = await getApiResource(url);
-    console.log(res);
+
+    console.log("url", url);
 
     if (res) {
       setHeroes(res);
+      setNextPage(res.info.next);
+      setPrevPage(res.info.prev);
+      setCounterPage(getPeoplePageId(url));
       setErrorApi(false);
     } else {
       setErrorApi(true);
@@ -20,12 +36,17 @@ const Heroespage = ({ setErrorApi }) => {
   };
 
   useEffect(() => {
-    getResource(HEROES_DATA);
+    getResource(HEROES_DATA + SWAPI_PARAM_PAGE + queryPage);
   }, []);
 
   return (
     <div>
-      <h1 className="header__text">Navigation</h1>
+      <HeroesNavigation
+        nextPage={nextPage}
+        prevPage={prevPage}
+        counterPage={counterPage}
+        getResource={getResource}
+      />
       {heroes && <Heroeslist data={heroes} />}
     </div>
   );
