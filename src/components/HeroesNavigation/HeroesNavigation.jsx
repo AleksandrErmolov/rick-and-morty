@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import UiButton from "../UI/UiButton/UiButton";
 
 import styles from "./HeroesNavigation.module.css";
 
@@ -9,35 +10,26 @@ export default function HeroesNavigation({
   prevPage,
   getResource,
 }) {
-    const handleChangePrev = () => {
-       getResource(prevPage);
+  const handleChangePrev = () => {
+    getResource(prevPage);
   };
 
-    const handleChangeNext = () => {
-      getResource(nextPage);
-    };
-      
+  const handleChangeNext = () => {
+    getResource(nextPage);
+  };
 
   return (
-    <div>
+    <div className={styles.container}>
       <Link to={`/heroes/?page=${counterPage - 1}`} className={styles.link}>
-        <button
+        <UiButton
+          text="Previous"
           onClick={handleChangePrev}
-          className={styles.buttons}
           disabled={!prevPage}
-        >
-          Previous
-        </button>
+        />
       </Link>
 
       <Link to={`/heroes/?page=${counterPage + 1}`} className={styles.link}>
-        <button
-          onClick={handleChangeNext}
-          className={styles.buttons}
-          disabled={!nextPage}
-        >
-          Next
-        </button>
+        <UiButton text="Next" onClick={handleChangeNext} disabled={!nextPage} />
       </Link>
     </div>
   );
