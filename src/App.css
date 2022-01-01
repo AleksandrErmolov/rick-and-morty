@@ -10,8 +10,11 @@
     --color-violent: #ae72c2;
 
     --border-radius-small: 3px;
+    --border-radius-medium: 5px;
+    --spasing-ultra-small: 5px;
     --spacing-medium: 20px;
     --spacing-large: 30px;
+    --spacing-small: 10px;
 
     --font-size: 16px;
     --width-max: 1200px;
@@ -22,6 +25,8 @@
     --font-size-header: 26px;
     --font-size-subheader: 18px;
 
+    --margin-list: 7px;
+
     --text-shadow-yellow:
         0 0 2px var(--color-white),
         0 0 40px var(--color-yellow);
@@ -29,6 +34,8 @@
     --text-shadow-blue:
         0 0 2px var(--color-white),
         0 0 40px var(--color-blue);
+
+
 
     --theme-default-header: #cccc46;
     --theme-default-bgimage: url('./static/bg.gif')

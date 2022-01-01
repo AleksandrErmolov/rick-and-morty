@@ -1,5 +1,6 @@
 import React from "react";
 import styles from "./Heroeslist.module.css";
+import { Link } from "react-router-dom"
 
 export default function Heroeslist({ data }) {
   return (
@@ -7,14 +8,14 @@ export default function Heroeslist({ data }) {
       <ul className={styles.list__container}>
         {data.results.map((person) => (
           <li className={styles.list__item} key={person.id}>
-            <a href="#">
+            <Link to={`/heroes/${person.id}`}>
               <img
                 className={styles.person__photo}
                 src={person.image}
                 alt={person.name}
               />
               <p> {person.name} </p>
-            </a>
+            </Link>
           </li>
         ))}
       </ul>

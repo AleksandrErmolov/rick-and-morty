@@ -13,7 +13,6 @@ const Heroespage = ({ setErrorApi }) => {
   const [prevPage, setPrevPage] = useState(null);
   const [counterPage, setCounterPage] = useState(2);
 
-  console.log("counterPage", counterPage);
 
   const query = useQueryParams();
   const queryPage = query.get("page");
@@ -22,7 +21,6 @@ const Heroespage = ({ setErrorApi }) => {
   const getResource = async (url) => {
     const res = await getApiResource(url);
 
-    console.log("url", url);
 
     if (res) {
       setHeroes(res);

@@ -1,6 +1,7 @@
 import HomePage from "../components/HomePage/HomePage";
 import NotFound from "../components/NotFound/NotFound";
 import Heroespage from "../pages/Heroespage/Heroespage";
+import HeroPage from "../pages/HeroPage/HeroPage";
 
 const routesConfig = [
   {
@@ -12,6 +13,12 @@ const routesConfig = [
   {
     path: "/heroes",
     component: <Heroespage />,
+    exatc: true,
+  },
+
+  {
+    path: "/heroes/:id",
+    component: <HeroPage />,
     exatc: true,
   },
 
