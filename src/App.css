@@ -8,6 +8,7 @@
 
     --color-blue: #6a83fb;
     --color-violent: #ae72c2;
+    --color-red: #f75d83;
 
     --border-radius-small: 3px;
     --border-radius-medium: 5px;
@@ -34,6 +35,7 @@
     --text-shadow-blue:
         0 0 2px var(--color-white),
         0 0 40px var(--color-blue);
+
 
 
 

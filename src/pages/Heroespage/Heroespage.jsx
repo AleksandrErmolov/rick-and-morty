@@ -16,11 +16,9 @@ const Heroespage = ({ setErrorApi }) => {
 
   const query = useQueryParams();
   const queryPage = query.get("page");
-  console.log("queryPage", queryPage);
 
   const getResource = async (url) => {
     const res = await getApiResource(url);
-
 
     if (res) {
       setHeroes(res);
