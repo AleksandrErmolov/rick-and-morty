@@ -43,7 +43,7 @@ const Heroespage = ({ setErrorApi }) => {
         counterPage={counterPage}
         getResource={getResource}
       />
-      {heroes && <Heroeslist data={heroes} />}
+      {heroes && <Heroeslist data={heroes.results} />}
     </div>
   );
 };

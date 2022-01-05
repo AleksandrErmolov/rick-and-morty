@@ -18,7 +18,7 @@ const routesConfig = [
   },
 
   {
-    path: "/favorite",
+    path: "/favorites",
     component: <FavoritePage />,
     exatc: true,
   },

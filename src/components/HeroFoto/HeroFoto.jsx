@@ -15,8 +15,6 @@ export default function HeroFoto({
 }) {
   const store = useSelector((state) => state.favoriteReducer);
 
-  console.log(store);
-
   const dispatch = useDispatch();
 
   const dispatchFavoritePeople = () => {
