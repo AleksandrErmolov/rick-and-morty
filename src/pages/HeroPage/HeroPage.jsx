@@ -4,6 +4,7 @@ import { withErrorApi } from "../../hoc-helpers/withErrorApi";
 import { useEffect, useState, Suspense } from "react";
 import { useParams } from "react-router-dom";
 import { HEROES_DATA } from "../../constants/api";
+import { useSelector } from "react-redux";
 
 import styles from "./HeroPage.module.css";
 import HeroFoto from "../../components/HeroFoto/HeroFoto";
@@ -17,18 +18,27 @@ const HeroFilm = React.lazy(() =>
 
 
 function HeroPage({ setErrorApi }) {
+
+  const [heroId, setHeroId] = useState(null);
   const [heroInfo, setHeroInfo] = useState(null);
   const [heroName, setHeroName] = useState(null);
   const [heroFoto, setHeroFoto] = useState(null);
   const [heroFilms, setHeroFilms] = useState(null);
+  const [heroFavorite, setHeroFavorite] = useState(false);
 
+  const storeData = useSelector((state) => state.favoriteReducer);
 
   const { id } = useParams();
 
   useEffect(() => {
     (async () => {
       const res = await getApiResource(`${HEROES_DATA}/${id}`);
-      console.log("res" , res);
+
+
+      setHeroId(id);
+      storeData[id] ? setHeroFavorite(true) : setHeroFavorite(false);
+
+
       if (res) {
         setHeroInfo([
           { title: "Created", data: res.created },
@@ -55,13 +65,19 @@ function HeroPage({ setErrorApi }) {
       <div className={styles.wrapper}>
         <span className={styles.person__name}>{heroName}</span>
         <div className={styles.container}>
-          <HeroFoto heroFoto={heroFoto} heroName={heroName} />
+          <HeroFoto
+            heroId={heroId}
+            heroFoto={heroFoto}
+            heroName={heroName}
+            heroFavorite={heroFavorite}
+            setHeroFavorite={setHeroFavorite}
+          />
           {heroInfo && <HeroInfo heroInfo={heroInfo} />}
 
           {heroFilms && (
-          <Suspense fallback={ <UILoading /> }>
-            <HeroFilm heroFilms={heroFilms} />
-          </Suspense>
+            <Suspense fallback={<UILoading />}>
+              <HeroFilm heroFilms={heroFilms} />
+            </Suspense>
           )}
         </div>
       </div>

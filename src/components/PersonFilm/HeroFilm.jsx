@@ -8,8 +8,6 @@ import styles from "./HeroFilm.module.css";
 export default function HeroFilm({ heroFilms }) {
   const [filmsName, setFilmsName] = useState([]);
 
-  console.log('heroFilms', heroFilms);
-
   useEffect(() => {
     (async () => {
       const response = await makeConcurrentRequest(heroFilms);
