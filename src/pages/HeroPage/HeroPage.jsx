@@ -69,4 +69,5 @@ function HeroPage({ setErrorApi }) {
   );
 }
 
+
 export default withErrorApi(HeroPage);

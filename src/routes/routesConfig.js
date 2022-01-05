@@ -1,3 +1,4 @@
+import FavoritePage from "../components/FavoritePage/FavoritePage";
 import HomePage from "../components/HomePage/HomePage";
 import NotFound from "../components/NotFound/NotFound";
 import Heroespage from "../pages/Heroespage/Heroespage";
@@ -13,6 +14,12 @@ const routesConfig = [
   {
     path: "/heroes",
     component: <Heroespage />,
+    exatc: true,
+  },
+
+  {
+    path: "/favorite",
+    component: <FavoritePage />,
     exatc: true,
   },
 
