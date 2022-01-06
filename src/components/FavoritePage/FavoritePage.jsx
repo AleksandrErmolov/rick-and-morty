@@ -38,7 +38,7 @@ export default function FavoritePage() {
           <h2 className={styles.comment}>
             Список пуст!
             <br /> Добавьте в <span className="header__text"> избранное </span>
-            из раздела <span className="header__text">People </span>
+            из раздела <span className="header__text">Hero </span>
           </h2>
         )}
       </div>
