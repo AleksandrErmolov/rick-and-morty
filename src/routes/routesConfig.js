@@ -3,6 +3,7 @@ import HomePage from "../components/HomePage/HomePage";
 import NotFound from "../components/NotFound/NotFound";
 import Heroespage from "../pages/Heroespage/Heroespage";
 import HeroPage from "../pages/HeroPage/HeroPage";
+import ErrorMessage from "../components/ErrorMessage";
 
 const routesConfig = [
   {
@@ -33,6 +34,12 @@ const routesConfig = [
     path: "/not-found",
     component: <NotFound />,
     exatc: true,
+  },
+
+  {
+    path: "/fail",
+    exact: true,
+    component: <ErrorMessage />,
   },
 
   {

@@ -2,7 +2,7 @@
     width: 600px;
     margin: auto;
     margin-top: 100px;
-    line-height: 1,7;
+    line-height: 1, 7;
     color: var(--color-yelllow);
     font-size: var(--font-size-header);
     text-align: center;
@@ -10,6 +10,15 @@
 
     -webkit-text-stroke-color: var(--color-yelllow);
     -webkit-text-stroke-width: .5px;
-    -webkit-text-fill-color:transparent;
+    -webkit-text-fill-color: transparent;
 
+}
+
+.video {
+    display: block;
+    margin: 0 auto;
+    margin-top: var(--spacing-large);
+    border-radius: var(--border-radius-medium);
+    box-shadow: var(--boxshadow-white);
+    width: 500px;
 }
