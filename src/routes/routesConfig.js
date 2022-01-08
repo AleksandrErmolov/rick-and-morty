@@ -4,6 +4,8 @@ import NotFound from "../components/NotFound/NotFound";
 import Heroespage from "../pages/Heroespage/Heroespage";
 import HeroPage from "../pages/HeroPage/HeroPage";
 import ErrorMessage from "../components/ErrorMessage";
+import SearchPage from '../pages/SearchPage/SearchPage'
+
 
 const routesConfig = [
   {
@@ -40,6 +42,12 @@ const routesConfig = [
     path: "/fail",
     exact: true,
     component: <ErrorMessage />,
+  },
+
+  {
+    path: "/search",
+    exact: true,
+    component: <SearchPage />,
   },
 
   {

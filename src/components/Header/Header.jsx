@@ -54,6 +54,9 @@ export default function Header() {
         <li>
           <NavLink to="/fail"> Fail </NavLink>
         </li>
+        <li>
+          <NavLink to="/search"> Search </NavLink>
+        </li>
       </ul>
       <Favorite />
     </div>
